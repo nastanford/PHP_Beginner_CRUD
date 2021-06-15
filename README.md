@@ -1,2 +1,3 @@
 # PHP_Beginner_CRUD
-Just a Beginner CRUD App for PHP Beginners
+
+A PHP Beginner CRUD App for PHP Beginners. I started with existing code and now I am going to update it to make it better.
