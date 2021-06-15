@@ -1,5 +1,7 @@
 <?php
-  require "db.php";
+  $pageTitle ='Post';
+
+  require "../config/db.php";
 
   if(isset($_POST["delete"])){
 
@@ -8,7 +10,7 @@
   $query = "DELETE FROM posts WHERE id={$delete_id}";
 
     if(mysqli_query($conn,$query)){
-      header("Location: ".ROOT_URL."");
+      header("Location: index.php");
     }else{
       echo "ERROR:".mysqli_error($conn);
     }
@@ -28,28 +30,22 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PHP Blog</title>
-</head>
-<body>
-  <?php include "navbar.php" ?>
+<?php include "includes/dsp_header.php" ?>
+<?php include "includes/navbar.php" ?>
+
   <div class="container">
-    <a href="<?php echo ROOT_URL ?>" class="back">Back</a>
+    <a href="index.php" class="back">Back</a>
     <h1><?php echo $post["title"] ?></h1>
     <small><?php echo $post["body"] ?></small>
     <p>Created by <?php echo $post["author"]?> <?php echo $post["created_at"]  ?></p>
 
-    <a href="<?php echo ROOT_URL ?>editpost.php?id=<?php echo $post["id"] ?>">Edit</a>
+    <a href="editpost.php?id=<?php echo $post["id"] ?>">Edit</a>
 
-    <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST">
+    <form action="post.php" method="POST">
       <input type="hidden" name="delete_id" value="<?php echo $post["id"] ?>">
       <input type="submit" value="Delete" name="delete">
     </form>
   </div>
-</body>
-</html>
+
+  <?php include "includes/dsp_footer.php" ?>
+
