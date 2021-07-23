@@ -1,0 +1,24 @@
+{
+  "name": "php_beginner_crud",
+  "version": "1.0.0",
+  "description": "A PHP Beginner CRUD App for PHP Beginners. I started with existing code and now I am going to update it to make it better.\r Going to move the code to MVC and arrange the folders as well.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nastanford/PHP_Beginner_CRUD.git"
+  },
+  "author": "Nathan Stanford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nastanford/PHP_Beginner_CRUD/issues"
+  },
+  "homepage": "https://github.com/nastanford/PHP_Beginner_CRUD#readme",
+  "dependencies": {
+    "autoprefixer": "^10.3.1",
+    "bootstrap": "^5.0.2",
+    "sass": "^1.35.2"
+  }
+}
